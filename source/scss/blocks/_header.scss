@@ -1,0 +1,37 @@
+header{
+  background-color: rgba(var(--bg-c),1.0);
+  padding: clamp(10px, 1.5385vw, 20px) 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 80;
+}
+
+.header{
+  padding: clamp(12px, 1.4615vw, 19px) clamp(14px, 1.5385vw, 20px);
+  border-radius: 10px;
+  background-color: rgba(var(--bg-e),1.0);
+  position: relative;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  grid-gap: clamp(14px, 1.5385vw, 20px);
+
+  &__box{
+   display: flex;
+   align-items: center;
+   grid-gap: clamp(14px, 1.5385vw, 20px);
+  }
+
+ 
+
+ 
+
+  // &.active{
+  // }
+}
+
+
+

@@ -1,0 +1,35 @@
+.logo{
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: clamp(28px, 3.0769vw, 40px);
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: rgba(var(--cl-c),1.0);
+}
+
+.tel-link{
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: clamp(14px, 1.2308vw, 16px);
+  text-transform: uppercase;
+  text-align: right;
+  color: rgba(var(--cl-a),1.0);
+}
+
+.title{
+  color: rgba(var(--cl-b),1.0);
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 120%;
+  font-size: clamp(24px, 3.8462vw, 50px);
+
+  &--mode{
+    font-size: clamp(35px, 3.8462vw, 50px);
+  }
+
+  &--white{
+    color: rgba(var(--cl-a),1.0);
+    font-size: clamp(35px, 3.8462vw, 50px);
+  }
+}

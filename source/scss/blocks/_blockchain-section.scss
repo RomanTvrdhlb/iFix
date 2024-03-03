@@ -1,0 +1,34 @@
+.blockchain-section{
+    border-top: 4px solid var(--br-f);
+    border-bottom: 4px solid var(--br-f);
+    background: var(--gr-h);
+    box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.70);
+    padding: clamp(20px, 5.2083vw, 100px) 0;
+
+
+    &__box{
+        display: grid;
+        grid-template-columns: 1fr .7fr;
+        align-items: center;
+        justify-content: space-between;
+        grid-gap: clamp(20px, 2.6042vw, 50px);
+
+        @include desktop{
+            grid-gap: clamp(20px, 3.472vw, 50px);
+        }
+
+        @include small-tablet{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .main-button{
+        padding: 10px clamp(25px, 3.6979vw, 71px);       
+    }
+
+    .main-top__wrapp{
+        @include ios{
+            order: 4;
+        }
+    }
+}
