@@ -1,0 +1,37 @@
+.services-list{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+
+    @include mobile{
+        grid-gap: 23px;
+    }
+
+    &__row{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, auto) 1fr;
+        grid-gap: 20px;
+        justify-items: end;
+
+        @include mobile{
+            grid-gap: 23px;
+        }
+
+        &:nth-child(3){
+            justify-items: start;
+            grid-template-columns: 1fr repeat(2, auto);
+        }
+    }
+
+    &__image{
+        position: absolute;
+        right: 22%;
+        top: 0;
+        transform: translate(-0.5%, -41.5%);
+        z-index: 2;
+        svg{
+            fill: transparent;
+        }
+    }
+}

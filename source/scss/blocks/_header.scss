@@ -9,20 +9,48 @@ header{
 }
 
 .header{
-  padding: clamp(12px, 1.4615vw, 19px) clamp(14px, 1.5385vw, 20px);
+  padding: clamp(12px, 1.1538vw, 15px) clamp(14px, 1.5385vw, 20px);
   border-radius: 10px;
   background-color: rgba(var(--bg-e),1.0);
   position: relative;
   z-index: 30;
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: repeat(2, auto) 1fr auto;
   align-items: center;
   grid-gap: clamp(14px, 1.5385vw, 20px);
+
+  .logo{
+    padding-left: clamp(35px, 3.8462vw, 50px);
+
+    @include tablet{
+      padding: 0;
+    }
+  }
 
   &__box{
    display: flex;
    align-items: center;
-   grid-gap: clamp(14px, 1.5385vw, 20px);
+   grid-gap: clamp(12px, 1.5385vw, 20px);
+
+   @include tablet{
+    justify-self: end;
+   }
+  }
+
+  @include tablet{
+    grid-template-columns: auto 1fr auto;
+    .main-nav{
+      display: none;
+    }
+
+    .burger{
+      order: 3;
+    }
+  }
+
+  @include mobile{
+    width: calc(100% + 20px);
+    margin-left: -10px;
   }
 
  
