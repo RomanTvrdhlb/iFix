@@ -1,66 +1,22 @@
-import Splide from "../vendor/splide";
-import vars from '../_vars';
-const {mainSlider, jackpotSlider, casinoSlider} = vars;
+import Swiper from 'swiper';
+import vars from "../_vars";
 
-jackpotSlider && new Splide( jackpotSlider, {
-  type   : 'slide',
-  perPage: 4,
-  speed:1200,
-  gap: 14,
-  pagination:false,
-  mediaQuery: 'min',
-  breakpoints: {
-    280: {
-      perPage: '1',
-		},
-    414: {
-      perPage: '2',
-		},
-    576: {
-      perPage: 3,
-		},
-   
-		768: {
-      arrows:false,
-			drag:false,
-      perPage: 4,
-		},
-  }
-} ).mount();
+const {blogSlider} = vars;
 
-casinoSlider && new Splide( casinoSlider, {
-  type   : 'slide',
-  perPage: 5,
-  speed:1200,
-  gap: 14,
-  pagination: false,
-  mediaQuery: 'min',
-  breakpoints: {
-    280: {
-      perPage: '1',
-		},
-    414: {
-      perPage: '2',
-		},
-    576: {
-      perPage: 3,
-		},
-    768: {
-      perPage: 4,
-		},
-		1024: {
-      arrows:false,
-			drag:false,
-      perPage: 5,
-		},
-  }
-} ).mount();
+if(blogSlider){
+  const swiper = new Swiper(blogSlider.querySelector('.blog-slider__container'), {
+    slidesPerView: 3,
+    spaceBetween: 21,
+    observer: true,
+    observeParents: true,
 
-mainSlider && new Splide( mainSlider, {
-  type   : 'loop',
-  perPage: 1,
-  speed:1200,
-  gap: 14,
-  pagination: false,
-  autoplay: true,
-} ).mount();
+    breakpoints: {
+      320: {
+        slidesPerView: 'auto',
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+}

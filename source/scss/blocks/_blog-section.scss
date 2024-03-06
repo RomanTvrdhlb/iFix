@@ -1,0 +1,14 @@
+.blog-section{
+    padding-bottom: clamp(50px, 9.2308vw, 120px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(24px, 4.6154vw, 60px);
+        align-items: center;
+
+        @include mobile{
+            align-items: flex-start;
+        }
+    }
+}
