@@ -1,0 +1,101 @@
+.service-section{
+   padding-bottom: clamp(64px, 9.2308vw, 120px);
+
+    &__box{
+        border: 1px solid var(--br-a);
+        border-radius: 10px;
+        padding: clamp(32px, 4.6154vw, 60px) clamp(24px, 6.1538vw, 80px);
+        background: rgba(var(--cl-c),1.0);
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(16px, 3.0769vw, 40px);
+        position: relative;
+
+        .main-button{
+            width: fit-content;
+
+            @include mobile{
+                width: 100%;
+                justify-content: center;
+                &:not(:hover){
+                    background: rgba(var(--bg-h),1.0);
+                }
+            }
+        }
+
+        @include mobile{
+            padding-bottom: 0;
+            background: rgba(var(--bg-i),1.0);
+        }
+    }
+
+    &__image{
+        position: absolute;
+        right: clamp(24px, 6.1538vw, 80px);
+        bottom: 18px;
+        z-index: 1;
+        width: Min(40vw, 520px);
+        height: Min(36.5385vw, 475px);
+        img,picture{
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-width: (576px)) and (max-width: (768px)) {
+            bottom: 50%;
+            transform: translateY(50%);
+        }
+
+        @include mobile{
+            right: initial;
+            position: relative;
+            bottom: -15px;
+            width: 354px;
+            height: 309px;
+            left: -15px;
+        }
+
+        @include ios{
+            left: -40px;
+        }
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(7px, .7692vw, 10px);
+        z-index: 2;
+        max-width: Min(46.4615vw, 604px);
+       
+        @media (min-width: (768px)) and (max-width: (1024px)) {
+            max-width: Min(35.156vw, 360px);
+        }
+        @media (min-width: (576px)) and (max-width: (768px)) {
+            max-width: Min(39.063vw, 300px);
+        }
+
+        @include mobile{
+            max-width: 100%;
+        }
+    }
+
+    .title{
+        font-weight: 600;
+        text-transform: uppercase;
+        @include mobile{
+            color: rgba(var(--cl-a),1.0);
+        }
+    }
+
+    p{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: clamp(16px, 1.3846vw, 18px);
+        line-height: 130%;
+        color: rgba(var(--cl-b),1.0);
+
+        @include mobile{
+            color: rgba(var(--cl-a),1.0);
+        }
+    }
+}
