@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
         accordion.style.maxHeight = 0;
         removeCustomClass(accordion, className);
       };
-
+      
       const openAccordion = function (accordion, className = "active") {
         accordion.style.maxHeight = accordion.scrollHeight + "px";
         addCustomClass(accordion, className);

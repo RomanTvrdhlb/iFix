@@ -1,5 +1,5 @@
 .blog-section{
-    padding-bottom: clamp(50px, 9.2308vw, 120px);
+    padding-bottom: clamp(50px, 6.1538vw, 80px);
 
     &__box{
         display: flex;
@@ -9,6 +9,10 @@
 
         @include mobile{
             align-items: flex-start;
+        }
+
+        .subscribe-form{
+            margin-top: clamp(26px, 4.6154vw, 60px);
         }
     }
 }

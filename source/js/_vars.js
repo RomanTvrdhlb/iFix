@@ -4,7 +4,7 @@ export default {
   documentEl: document,
   htmlEl: document.documentElement,
   bodyEl: document.body,
-
+  accParrent: [...document.querySelectorAll('[data-accordion-init]')],
   header: document.querySelector('header'),
   footer: document.querySelector('footer'),
   overlay: document.querySelector('[data-overlay]'),

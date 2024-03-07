@@ -32,3 +32,12 @@
     font-size: clamp(35px, 3.8462vw, 50px);
   }
 }
+
+.subtitle{
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: clamp(24px, 2.3077vw, 30px);
+  line-height: 120%;
+  text-transform: uppercase;
+  color: rgba(var(--cl-b),1.0);
+}
