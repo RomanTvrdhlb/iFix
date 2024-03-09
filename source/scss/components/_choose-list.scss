@@ -2,7 +2,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     grid-gap: clamp(20px, 3.0769vw, 40px) clamp(25px, 3.8462vw, 50px);
+    grid-template-columns: repeat(2, 1fr);
 
+    @include small-tablet{
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+    }
 
     &__item{
         display: flex;
@@ -26,4 +31,6 @@
         line-height: 130%;
         color: rgba(var(--cl-d),1.0);
     }
+
+   
 }

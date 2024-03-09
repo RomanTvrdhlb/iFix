@@ -1,6 +1,7 @@
 .blog-section{
     padding-bottom: clamp(50px, 6.1538vw, 80px);
-
+    overflow: hidden;
+    
     &__box{
         display: flex;
         flex-direction: column;
