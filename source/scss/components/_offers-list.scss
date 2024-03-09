@@ -12,7 +12,15 @@
         &--mode{
             .offer-card--double{
                 grid-column: 2/4;
+
+                @include small-tablet{
+                    grid-column: initial;
+                }
             }
+        }
+
+        @include small-tablet{
+            grid-template-columns: 1fr;
         }
     }
 }
