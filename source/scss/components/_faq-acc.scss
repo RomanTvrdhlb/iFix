@@ -36,11 +36,15 @@
     &:hover{
         background: rgba(var(--bg-c), 1);
     }
+
+    @include small-tablet{
+      border-radius: 10px;
+    }
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
+    width: clamp(16px, 1.8462vw, 24px);
+    height: clamp(16px, 1.8462vw, 24px);
     position: relative;
 
     &::before, &:after{
@@ -53,14 +57,14 @@
     
     &::before{
         width: 100%;
-        height: 4px;
+        height: clamp(3px, .3077vw, 4px);
         top: 50%;
         transform: translateY(-50%);
         left: 0;
     }
 
     &::after{
-        width: 4px;
+        width: clamp(3px, .3077vw, 4px);
         height: 100%;
         top: 0;
         transform: translateX(-50%);
@@ -103,6 +107,7 @@
     font-size: clamp(14px, 1.2308vw, 16px);
     line-height: 130%;
     color: rgba(var(--cl-b), 1);
+    text-align: start;
   }
 
   p {

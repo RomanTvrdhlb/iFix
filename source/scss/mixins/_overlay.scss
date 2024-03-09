@@ -8,8 +8,7 @@
   z-index: 9;
   padding: 20px 20px;
   overflow-y: scroll;
-
-  background:  rgba(var(--bg-c),0.95);
+  background:  var(--overlay-bg);
   visibility: hidden;
   opacity: 0;
 
@@ -28,6 +27,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(16px);
 
 
     visibility: visible;

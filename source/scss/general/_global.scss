@@ -234,3 +234,49 @@ fieldset {
       transform: none !important;
     }
 }
+
+.modal {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -100vh) scale(0);
+  opacity: 0;
+  grid-row: 1;
+  grid-column: 1;
+  transition: opacity 1s;
+  pointer-events: none;
+
+  &.active {
+    position: relative;
+    transform: translate(-50%,0) scale(1);
+    opacity: 1;
+    z-index: 20;
+    transition: all 1s;
+
+    pointer-events: initial;
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 20;
+
+    @include mobile{
+      right: 12px;
+      top: 12px;
+    }
+    svg{
+      transition: all .4s;
+      stroke: var(--svg-color-k);
+    }
+    &:hover{
+      svg{
+        stroke:rgba(var(--bg-c),1.0);
+      }
+    }
+  }
+
+  .close svg {
+    pointer-events: none;
+  }
+}

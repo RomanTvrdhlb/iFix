@@ -73,6 +73,10 @@
             fill: none;
         }
 
+        @include tablet{
+            right: clamp(12px, 2.344vw, 24px);
+        }
+
         @include small-tablet{
             display: none;
         }

@@ -1,7 +1,6 @@
 header{
-  background-color: rgba(var(--bg-c),1.0);
   padding: clamp(10px, 1.5385vw, 20px) 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -52,13 +51,6 @@ header{
     width: calc(100% + 20px);
     margin-left: -10px;
   }
-
- 
-
- 
-
-  // &.active{
-  // }
 }
 
 

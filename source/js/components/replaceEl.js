@@ -2,8 +2,9 @@ import vars from "../_vars";
 import { throttle } from "../functions/throttle";
 
 const {
- rewardsImage,rewardsParent,table, tableParent, referralImage, referralParent, firstImage, firstParent
+ social,socialParent,socialParentMob,faqAcc,faqAccParent,faqAccParentMob
 } = vars;
+
 
 const replaceElementsFunction = (
   element,
@@ -25,47 +26,14 @@ const replaceElementsFunction = (
   }
 };
 
-if(firstParent){
-  const firstParentMob = firstParent.querySelector('.main-top');
-
+if(social){
   window.addEventListener("resize", () => {
     throttle(
       replaceElementsFunction(
-        firstImage,
-        firstParent,
-        firstParentMob,
-        576,
-        "afterbegin",
-        "beforeend"
-      )
-    );
-  });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    throttle(
-      replaceElementsFunction(
-        firstImage,
-        firstParent,
-        firstParentMob,
-        576,
-        "afterbegin",
-        "beforeend"
-      )
-    );
-  });
-}
-
-
-if(rewardsParent){
-  const rewardsParentMob = rewardsParent.querySelector('.main-top');
-
-  window.addEventListener("resize", () => {
-    throttle(
-      replaceElementsFunction(
-        rewardsImage,
-        rewardsParent,
-        rewardsParentMob,
-        414,
+        social,
+        socialParent,
+        socialParentMob,
+        768,
         "beforeend",
         "beforeend"
       )
@@ -75,29 +43,27 @@ if(rewardsParent){
   window.addEventListener("DOMContentLoaded", () => {
     throttle(
       replaceElementsFunction(
-        rewardsImage,
-        rewardsParent,
-        rewardsParentMob,
-        414,
-      "beforeend",
-      "beforeend"
+        social,
+        socialParent,
+        socialParentMob,
+        768,
+        "beforeend",
+        "beforeend"
       )
     );
   });
 }
 
-if(tableParent){
-  const tableParentMob = tableParent.querySelector('.main-top');
-
+if(faqAcc && faqAccParent){
   window.addEventListener("resize", () => {
     throttle(
       replaceElementsFunction(
-        table,
-        tableParent,
-        tableParentMob,
-        414,
-      "beforeend",
-      "afterbegin"
+        faqAcc,
+        faqAccParent,
+        faqAccParentMob,
+        768,
+        "afterbegin",
+        "beforeend"
       )
     );
   });
@@ -105,44 +71,104 @@ if(tableParent){
   window.addEventListener("DOMContentLoaded", () => {
     throttle(
       replaceElementsFunction(
-        table,
-        tableParent,
-        tableParentMob,
-        414,
-      "beforeend",
-      "afterbegin"
+        faqAcc,
+        faqAccParent,
+        faqAccParentMob,
+        768,
+        "afterbegin",
+        "beforeend"
       )
     );
   });
 }
 
-if(referralParent){
-const referralParentMob = referralParent.querySelector('.main-top');
+// if(rewardsParent){
+//   const rewardsParentMob = rewardsParent.querySelector('.main-top');
 
-window.addEventListener("resize", () => {
-  throttle(
-    replaceElementsFunction(
-      referralImage,
-      referralParent,
-      referralParentMob,
-      768,
-    "beforeend",
-    "beforeend"
-    )
-  );
-});
+//   window.addEventListener("resize", () => {
+//     throttle(
+//       replaceElementsFunction(
+//         rewardsImage,
+//         rewardsParent,
+//         rewardsParentMob,
+//         414,
+//         "beforeend",
+//         "beforeend"
+//       )
+//     );
+//   });
 
-window.addEventListener("DOMContentLoaded", () => {
-  throttle(
-    replaceElementsFunction(
-      referralImage,
-      referralParent,
-      referralParentMob,
-      768,
-    "beforeend",
-    "beforeend"
-    )
-  );
-});
-}
+//   window.addEventListener("DOMContentLoaded", () => {
+//     throttle(
+//       replaceElementsFunction(
+//         rewardsImage,
+//         rewardsParent,
+//         rewardsParentMob,
+//         414,
+//       "beforeend",
+//       "beforeend"
+//       )
+//     );
+//   });
+// }
+
+// if(tableParent){
+//   const tableParentMob = tableParent.querySelector('.main-top');
+
+//   window.addEventListener("resize", () => {
+//     throttle(
+//       replaceElementsFunction(
+//         table,
+//         tableParent,
+//         tableParentMob,
+//         414,
+//       "beforeend",
+//       "afterbegin"
+//       )
+//     );
+//   });
+
+//   window.addEventListener("DOMContentLoaded", () => {
+//     throttle(
+//       replaceElementsFunction(
+//         table,
+//         tableParent,
+//         tableParentMob,
+//         414,
+//       "beforeend",
+//       "afterbegin"
+//       )
+//     );
+//   });
+// }
+
+// if(referralParent){
+// const referralParentMob = referralParent.querySelector('.main-top');
+
+// window.addEventListener("resize", () => {
+//   throttle(
+//     replaceElementsFunction(
+//       referralImage,
+//       referralParent,
+//       referralParentMob,
+//       768,
+//     "beforeend",
+//     "beforeend"
+//     )
+//   );
+// });
+
+// window.addEventListener("DOMContentLoaded", () => {
+//   throttle(
+//     replaceElementsFunction(
+//       referralImage,
+//       referralParent,
+//       referralParentMob,
+//       768,
+//     "beforeend",
+//     "beforeend"
+//     )
+//   );
+// });
+// }
 

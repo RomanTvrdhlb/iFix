@@ -5,6 +5,8 @@
     display: flex;
     justify-content: space-between;
     grid-gap: 15px;
+
+   
     }
 
     &__inner{
@@ -23,10 +25,34 @@
             font-size: clamp(16px, 1.3846vw, 18px);
             line-height: 130%;
             color: rgba(var(--cl-b),1.0);
+
+            @include small-tablet{
+                order: 3;
+            }
         }
 
         .main-button{
-            width: fit-content;
+            
+
+            @include small-tablet{
+                order: 4;
+            }
+
+            @include for-mobile{
+                width: fit-content;
+            }
+        }
+
+        @include small-tablet{
+            max-width: 100%;
+        }
+    }
+
+    .faq-acc{
+        @include small-tablet{
+            order: 2;
+            max-width: 100%;
+            margin-bottom: 9px;
         }
     }
 }
