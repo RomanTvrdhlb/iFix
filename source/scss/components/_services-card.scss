@@ -17,6 +17,10 @@
         max-width: 310px;
     }
 
+    @include mobile{
+        min-height: 322px;
+    }
+
     &__title{
         font-family: var(--font-family);
         font-weight: 600;
@@ -24,8 +28,13 @@
         line-height: 120%;
         color: rgba(var(--cl-b),1.0);
         max-width: 131px;
+
+        @include mobile{
+            max-width: 115px;
+        }
     }
 
+      
     &--yellow{
         z-index: 1;
         background: rgba(var(--bg-c),1.0);
@@ -33,21 +42,100 @@
         @include for-laptop{
             max-width: 420px;
         }
+
+        @include mobile{
+            min-height: 305px;
+        }
+
+        .services-card__image{
+            width: clamp(164px, 18.8462vw, 245px);
+            top: 0;
+ 
+
+            @include small-tablet{
+                width:  clamp(164px, 25.26vw, 194px);
+            }
+
+            @include mobile{
+                width: 194px;
+                right: -13px;
+                top: 25px;
+            }
+
+            &--mode{
+            width: clamp(140px, 17.6923vw, 230px);
+
+            @media (min-width: (576px)) and (max-width: (768px)){
+                width: clamp(140px, 23.438vw, 180px);
+            }
+
+            @media (min-width: (576px)) and (max-width: (730px)){
+                right: -10px;
+            }
+
+            @include mobile{
+                width: 186px;
+                right: 15px;
+            }
+
+            @include ios{
+                top: 16px;
+                right: -13px;
+            }
+        }
+        }
     }
 
     &--top{
         z-index: 1;
+
+        @include mobile{
+            min-height: 298px;
+        }
+
+        .services-card__image{
+            width: clamp(101px, 13.9231vw, 181px);
+
+            @include tablet{
+           
+            }
+            @media (min-width: (768px)) and (max-width: (1024px)){
+                width: clamp(91px, 11.816vw, 121px);
+                right: 5px;
+            }
+
+            @media (min-width: (576px)) and (max-width: (768px)){
+                width: clamp(101px, 20.964vw, 161px);
+                top: 13%;
+            }
+
+            @include mobile{
+                width: clamp(121px, 24.479vw, 141px);
+                top: 0;
+                right: 53px;
+            }
+        }
     }
+
+    &--ice{
+        @include mobile{
+            min-height: 350px;
+        }
+    }
+      
 
     &--mode{
      justify-content: flex-start;
 
      .services-card__image{
+        border-radius: 10px;
+        overflow: hidden;
         bottom: 0;
         left: 0;
         right: 0;
         top: initial;
         transform: none;
+        width: 100%;
      }
     }
 
@@ -76,17 +164,41 @@
         right: 15px;
         top: 0;
         transform: translateY(-22%);
+        width: clamp(169px, 14.6154vw, 190px);
+        width: clamp(115px, 14.6154vw, 190px);
+
+
+        @media (min-width: (768px)) and (max-width: (1024px)){
+            top: -11px;
+        }
+
+        @include small-tablet{
+            width: clamp(115px, 23.438vw, 180px);
+        }
+
+        @include mobile{
+            width: clamp(169px, 32.986vw, 190px);
+            top: 27px;
+        }
 
         &--mode{
             transform: none;
         }
 
         &--right{
-            width: 335px;
+            width: 105%;
             height: auto;
             left: 0;
             right: initial;
             transform: none;
+            top: 0;
+
+            @include small-tablet{
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+            }
         }
     }
 }
