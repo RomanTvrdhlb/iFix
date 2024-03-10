@@ -7,11 +7,15 @@
     border: 1px solid var(--br-a);
     border-radius: 10px;
     padding: 30px 25px;
-    max-width: 310px;
+  
     width: 100%;
     min-height: 350px;
     background: rgba(var(--bg-g),1.0);
     z-index: 4;
+
+    @include for-laptop{
+        max-width: 310px;
+    }
 
     &__title{
         font-family: var(--font-family);
@@ -24,8 +28,11 @@
 
     &--yellow{
         z-index: 1;
-        max-width: 420px;
         background: rgba(var(--bg-c),1.0);
+
+        @include for-laptop{
+            max-width: 420px;
+        }
     }
 
     &--top{
@@ -46,7 +53,6 @@
 
     &--end{
         z-index: 1;
-        max-width: 420px;
         background: rgba(var(--bg-c),1.0);
         p{
             max-width: 160px;
@@ -56,6 +62,10 @@
             &__image{
                     justify-content: flex-end;
             }
+        }
+
+        @include for-laptop{
+            max-width: 420px;
         }
     }
 

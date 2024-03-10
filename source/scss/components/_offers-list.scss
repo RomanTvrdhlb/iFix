@@ -3,6 +3,10 @@
     flex-direction: column;
     grid-gap: 20px;
 
+    @include small-tablet{
+        grid-gap: 23px;
+    }
+
     &__row{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -21,6 +25,7 @@
 
         @include small-tablet{
             grid-template-columns: 1fr;
+            grid-gap: 23px;
         }
     }
 }
