@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import vars from "../_vars";
-import {Autoplay} from 'swiper/modules';
+import {Autoplay, FreeMode} from 'swiper/modules';
 
 const {blogSlider, rewiewsSlider, brandsSlider} = vars;
 let containerWidth = document.documentElement.clientWidth;
@@ -33,6 +33,7 @@ if (brandsSlider) {
     observeParents: true,
     loop: true,
     speed: 4000,
+
     
     autoplay: {
       delay: 0,

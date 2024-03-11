@@ -25,4 +25,8 @@
             mix-blend-mode: darken;
         }
     }
+
+    .swiper-wrapper {
+        transition-timing-function: Linear;
+        }
 }
