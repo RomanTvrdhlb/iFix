@@ -151,6 +151,10 @@
     &--mode{
         background: rgba(var(--bg-c),1.0);
         align-items: flex-start;
+        
+        @include for-mobile{
+            overflow: hidden;
+        }
 
         .offer-card{
             &__text{
@@ -237,6 +241,9 @@
     &--charity{
         align-items: flex-start;
         background: rgba(var(--bg-c),1.0);
+        @include for-mobile{
+            overflow: hidden;
+        }
         
         .offer-card{
 

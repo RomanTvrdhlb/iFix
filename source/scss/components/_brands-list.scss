@@ -22,11 +22,12 @@
 
         @include small-tablet{
             min-width: 94px;
+            margin-bottom: 2px;
         }
     }
 
     @include small-tablet{
-        overflow-x: scroll;
+        overflow-x: auto;
         align-self: flex-start;
         margin-left: calc(var(--container-offset) * -1);
         width: calc(100% + (var(--container-offset) * 2));

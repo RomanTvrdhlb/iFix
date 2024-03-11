@@ -1,7 +1,9 @@
 import Swiper from 'swiper';
 import vars from "../_vars";
 
-const {blogSlider} = vars;
+const {blogSlider, rewiewsSlider} = vars;
+let containerWidth = document.documentElement.clientWidth;
+
 
 if(blogSlider){
   const swiper = new Swiper(blogSlider.querySelector('.blog-slider__container'), {
@@ -20,3 +22,30 @@ if(blogSlider){
     },
   });
 }
+
+const rewiewsSliderContainer = rewiewsSlider.querySelector('.rewiews-slider__container');
+let swiper;
+
+function updateSlider() {
+  if (window.innerWidth < 768 && rewiewsSlider) {
+    if (swiper) {
+      swiper.destroy();
+      swiper = null;
+    }
+    swiper = new Swiper(rewiewsSliderContainer, {
+      slidesPerView: 'auto',
+      spaceBetween: 15,
+      observer: true,
+      observeParents: true,
+    });
+  } else {
+    if (swiper) {
+      swiper.destroy();
+      swiper = null;
+    }
+  }
+}
+
+
+window.addEventListener('load', updateSlider);
+window.addEventListener('resize', updateSlider);

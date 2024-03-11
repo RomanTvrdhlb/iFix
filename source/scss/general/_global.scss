@@ -30,7 +30,7 @@ main {
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding-top: var(--header-height);
+  // padding-top: var(--header-height);
   min-width: 0 !important;
   
   // flex: 1 0 auto;
@@ -279,5 +279,18 @@ fieldset {
 
   .close svg {
     pointer-events: none;
+  }
+}
+
+.cookies-inner{
+  z-index: 20;
+  position: fixed;
+  right: var(--container-offset);
+  bottom: 50px;
+  transition: all .4s;
+  transform: translateX(0);
+
+  &.active{
+    transform: translateX(150%);
   }
 }

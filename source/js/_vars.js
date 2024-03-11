@@ -11,6 +11,8 @@ export default {
   mobileMenu: document.querySelector('.header-menu'),
   burger: document.querySelector('.burger'),
   blogSlider: document.querySelector('.blog-slider'),
+  rewiewsSlider: document.querySelector('.rewiews-slider'),
+  cookies: document.querySelector('.cookies-inner'),
   faqAcc: document.querySelector('.faq-acc'),
   faqAccParent: document.querySelector('.faq-section__box'),
   faqAccParentMob: document.querySelector('.faq-section__inner'),

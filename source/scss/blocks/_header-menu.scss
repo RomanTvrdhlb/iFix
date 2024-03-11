@@ -15,6 +15,7 @@
     @include mobile{
         left: 6px;
         width: calc(100% - (var(--container-offset) * 2) + 20px);
+        height: calc(100vh - 100px);
     }
     
    &__box{
@@ -44,6 +45,8 @@
     @include mobile{
         width: 100%;
         align-items: center;
+        grid-gap: 25px;
+        justify-content: center;
     }
    }
 
@@ -79,6 +82,11 @@
 
     @include mobile{
         align-items: center;
+        margin-bottom: 20px;
+        grid-gap: 25px;
+        a{
+            font-size: 16px;
+        }
     }
    }
    

@@ -3,7 +3,7 @@ import { enableScroll } from '../functions/enable-scroll';
 import vars from '../_vars';
 
 import {toggleCustomClass, removeCustomClass, addCustomClass, removeClassInArray} from '../functions/customFunctions';
-const {overlay, burger, mobileMenu, header, navLinks, footer} = vars;
+const {overlay, burger, mobileMenu, cookies} = vars;
 
 const mobileMenuHandler = function(mobileMenu, burger) {
     burger.addEventListener('click', function(e){
@@ -29,6 +29,10 @@ if (mobileMenu) {
 }
 
 
-
+if(cookies){
+  setTimeout(function(){
+    addCustomClass(cookies, 'active');
+  }, 5000)
+}
 
 
