@@ -12,6 +12,7 @@ export default {
   burger: document.querySelector('.burger'),
   blogSlider: document.querySelector('.blog-slider'),
   rewiewsSlider: document.querySelector('.rewiews-slider'),
+  brandsSlider: document.querySelector('.brands-slider'),
   cookies: document.querySelector('.cookies-inner'),
   faqAcc: document.querySelector('.faq-acc'),
   faqAccParent: document.querySelector('.faq-section__box'),
@@ -21,17 +22,6 @@ export default {
   socialParentMob: document.querySelector('.footer__box').firstElementChild,
   modals: [...document.querySelectorAll('[data-popup]')],
   modalsButton: [...document.querySelectorAll("[data-btn-modal]")],
-//   rewardsParent: document.querySelector('.rewards-section__box'),
-//   rewardsImage: document.querySelector('.rewards-section__image'),
-//   tableParent: document.querySelector('.blockchain-section__box'),
-//   table: document.querySelector('.blockchain-table'),
-//   referralImage: document.querySelector('.referral-section__image'),
-//   referralParent: document.querySelector('.referral-section__box'),
-//   firstImage: document.querySelector('.first-section__image'),
-//   firstParent: document.querySelector('.first-section__box'),
-//   navLinks: document.querySelectorAll('.header-nav__link'),
-//   copyWrapper: document.querySelector('.info-wrapper'),
-//   form: document.querySelector('.referral-form'),
 }
 
 

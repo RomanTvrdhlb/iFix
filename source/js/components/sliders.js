@@ -1,7 +1,8 @@
 import Swiper from 'swiper';
 import vars from "../_vars";
+import {Autoplay} from 'swiper/modules';
 
-const {blogSlider, rewiewsSlider} = vars;
+const {blogSlider, rewiewsSlider, brandsSlider} = vars;
 let containerWidth = document.documentElement.clientWidth;
 
 
@@ -18,6 +19,31 @@ if(blogSlider){
       },
       1024: {
         slidesPerView: 3,
+      },
+    },
+  });
+}
+
+if (brandsSlider) {
+  const swiper = new Swiper(brandsSlider.querySelector('.brands-slider__container'), {
+    modules: [Autoplay],
+    slidesPerView: 'auto',
+    spaceBetween: 19,
+    observer: true,
+    observeParents: true,
+    loop: true,
+    speed: 4000,
+    
+    autoplay: {
+      delay: 0,
+    },
+
+    breakpoints: {
+      320: {
+        spaceBetween: 7,
+      },
+      1024: {
+        spaceBetween: 19,
       },
     },
   });

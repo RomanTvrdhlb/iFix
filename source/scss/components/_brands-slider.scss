@@ -1,12 +1,7 @@
-.brands-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    grid-gap: clamp(7px, 1.4615vw, 19px);
+.brands-slider{
     width: 100%;
-    flex-direction: column;
 
-    &__item{
+    &__slide{
         border: clamp(0.38px, .0769vw, 1px) solid var(--br-a);
         border-radius: clamp(8px, 1.5385vw, 20px);
         padding: clamp(7px, 1.5385vw, 20px) clamp(9px, 1.9231vw, 25px);
@@ -17,21 +12,17 @@
         align-items: center;
         justify-content: center;
 
-        img,picture{
-            mix-blend-mode: darken;
-        }
-
         @include small-tablet{
             min-width: 94px;
             margin-bottom: 2px;
         }
     }
 
-    @include small-tablet{
-        overflow-x: auto;
-        align-self: flex-start;
-        margin-left: calc(var(--container-offset) * -1);
-        width: calc(100% + (var(--container-offset) * 2));
-        padding: 0 var(--container-offset);
+    &__image{
+        display: flex;
+        align-items: center;
+        img,picture{
+            mix-blend-mode: darken;
+        }
     }
 }
