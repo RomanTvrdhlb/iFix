@@ -1,26 +1,20 @@
 // ----------------- MAIN COMPONENTS -----------------
 @import "components/main-top.scss";
-@import "components/main-nav";
-@import "components/services-list";
 @import "components/services-card";
 @import "components/offer-card";
 @import "components/blog-card";
-@import "components/main-form";
-@import "components/blog-slider";
-@import "components/subscribe-form";
-@import "components/faq-acc";
 @import "components/rewiews-top";
 @import "components/rewiew-card";
-@import "components/rewiews-slider";
-@import "components/brands-slider";
-
-
-
-
 // ----------------- MAIN COMPONENTS -----------------
 
 // ----------------- BLOCK COMPONENTS -----------------
-
+@import "components/brands-slider";
+@import "components/rewiews-slider";
+@import "components/faq-acc";
+@import "components/main-form";
+@import "components/blog-slider";
+@import "components/subscribe-form";
+@import "components/main-nav";
 // ----------------- BLOCK COMPONENTS -----------------
 
 // ----------------- GRID COMPONENTS -----------------
@@ -30,7 +24,7 @@
 @import "components/choose-list";
 @import "components/offers-list";
 @import "components/brands-list";
-
+@import "components/services-list";
 // ----------------- GRID COMPONENTS -----------------
 
 

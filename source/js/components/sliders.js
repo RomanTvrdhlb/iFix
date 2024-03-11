@@ -73,6 +73,5 @@ function updateSlider() {
   }
 }
 
-
 window.addEventListener('load', updateSlider);
 window.addEventListener('resize', updateSlider);

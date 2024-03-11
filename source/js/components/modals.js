@@ -49,7 +49,6 @@ function buttonClickHandler(e, buttonAttribute, activeClass) {
   e.preventDefault();
   const currentModalId = e.target.getAttribute(`${buttonAttribute}`);
   const curentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
-  console.log(currentModalId);
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, activeClass);
   addCustomClass(curentModal, activeClass);
@@ -67,7 +66,6 @@ function modalInit(buttonsArray, buttonAttribute, activeClass) {
   buttonsArray.map(function (btn) {
     
     btn.addEventListener('click', (e) => {
-        console.log(btn);
         buttonClickHandler(e, buttonAttribute, activeClass)
     })
   });
