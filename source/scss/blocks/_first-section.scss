@@ -4,16 +4,15 @@
     background-color: rgba(var(--bg-c),1.0);
     z-index: 2;
     
-
-    // &::before{
-    //     position: absolute;
-    //     content: '';
-    //     width: 100vw;
-    //     height: var(--header-height);
-    //     background-color: rgba(var(--bg-c),1.0);
-    //     top: 0;
-    //     transform: translateY(-100%);
-    // }
+    &::before{
+        position: absolute;
+        content: '';
+        width: 100vw;
+        height: var(--header-height);
+        background-color: rgba(var(--bg-c),1.0);
+        top: 0;
+        transform: translateY(-100%);
+    }
 
     @include mobile{
         padding-bottom: 0;

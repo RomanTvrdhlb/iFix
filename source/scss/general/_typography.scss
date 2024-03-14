@@ -75,3 +75,50 @@
     color: rgba(var(--cl-a),1.0);
   }
 }
+
+#map{
+  fill: #FADD4B;
+  stroke: black;
+  opacity: 0;
+}
+
+#mapPoint,#mapText{
+  fill: black;
+  opacity: 0;
+}
+
+#map,#mapPoint,#mapText{
+  transition: all .4s;
+  animation: fadeIn 1s 2.75s forwards;
+}
+
+#fixBox{
+  opacity: 0;
+  stroke: black;
+  fill: #FFCD07;
+  transition: all .4s;
+  animation: fadeIn 1s 2s forwards;
+}
+
+#fixText{
+  opacity: 0;
+  fill: black;
+  transition: all .4s;
+  animation: fadeIn 1s 2s forwards;
+}
+
+#mapArrow,#mapArrow2{
+  stroke: black;
+  opacity: 0;
+  transition: all .4s;
+  animation: fadeIn 1s 2.25s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

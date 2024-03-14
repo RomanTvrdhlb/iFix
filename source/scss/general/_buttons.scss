@@ -24,7 +24,51 @@
   }
 }
 
+.fixed-btn{
+  z-index: 15;
+  position: fixed;
+  bottom: 15px;
+  left: 13px;
+  right: 13px;
+  animation: 3s .5s infinite pulse;
 
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 100%;
+    width: 2rem;
+    transform: skewX(-45deg);
+    animation: 5s linear infinite flare;
+    left: -150%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .4));
+}
+
+  @include for-mobile{
+    display: none;
+  }
+}
+
+@keyframes pulse {
+  0%, 100%, 50% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(var(--bg-k),1.0);
+  }
+  25% {
+    transform: scale(1.035);
+    box-shadow: 0 0 3vw rgba(var(--bg-k),1.0);
+  }
+}
+
+@keyframes flare {
+  0%{
+    left: -150%;
+  }
+
+  100%,25%{
+    left: 150%;
+  }
+}
 
 
 

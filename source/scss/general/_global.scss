@@ -30,7 +30,7 @@ main {
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  // padding-top: var(--header-height);
+  padding-top: var(--header-height);
   min-width: 0 !important;
   
   // flex: 1 0 auto;
@@ -229,12 +229,12 @@ fieldset {
   border: none;
 }
 
-@include mobile{
-    [data-aos] {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-}
+// @include mobile{
+//     [data-aos] {
+//       opacity: 1 !important;
+//       transform: none !important;
+//     }
+// }
 
 .modal {
   position: relative;
