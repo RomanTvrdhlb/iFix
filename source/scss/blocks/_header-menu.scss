@@ -93,4 +93,14 @@
     &.active {
         transform: translateY(100%) scale(1);
     }
+
+    .main-form{
+        @media  (min-width: (768px)) and (max-height: (750px)) {
+            padding: 24px;
+
+            .main-form__area{
+                min-height: 80px;
+            }
+          }
+    }
 }

@@ -1,6 +1,7 @@
 .faq-section{
     padding-bottom: clamp(50px, 9.2308vw, 120px);
-
+    overflow: hidden;
+    
     &__box{
     display: flex;
     justify-content: space-between;

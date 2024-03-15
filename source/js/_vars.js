@@ -17,6 +17,7 @@ export default {
   faqAcc: document.querySelector('.faq-acc'),
   faqAccParent: document.querySelector('.faq-section__box'),
   faqAccParentMob: document.querySelector('.faq-section__inner'),
+  forms: document.querySelectorAll('.main-form'),
   social: document.querySelector('.footer__social'),
   socialParent: document.querySelector('.footer__wrapp'),
   socialParentMob: document.querySelector('.footer__box').firstElementChild,

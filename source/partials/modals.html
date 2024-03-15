@@ -2,7 +2,7 @@
 
     <div class="modal" data-popup="order">
         <div class="modal__box" role="dialog" aria-modal="true">
-            <form class="main-form main-form--mode">
+            <form id="orderForm" class="main-form main-form--mode">
                 <div class="main-form__box">
                 <span class="title">заказать услугу</span>
       
@@ -17,7 +17,7 @@
                   </li>
                   <li class="main-form__row">
                     <label for="phone" class="main-form__label">
-                      <input type="number" id="phone" class="main-form__input" placeholder="Your phone">
+                      <input type="tel" id="phone" class="main-form__input" placeholder="Your phone">
                     </label>
                     <label for="device" class="main-form__label">
                       <input type="text" id="device" class="main-form__input" placeholder="Device type">
@@ -27,7 +27,7 @@
                     <textarea class="main-form__area" id="message" placeholder="Message"></textarea>
                   </li>
                 </ul>
-                <button class="main-button">Book a Call</button>
+                <button type="submit" class="main-button">Book a Call</button>
               </div>
               </form>
         </div>
@@ -48,11 +48,12 @@
                       </label>
                   </div>
          
-                <button class="main-button">Book a Call</button>
+                <button type="submit" class="main-button">Book a Call</button>
               </div>
               </form>
         </div>
     </div>
+ 
 </div>
 
 <div class="cookies-inner">

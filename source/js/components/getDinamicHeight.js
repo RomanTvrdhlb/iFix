@@ -27,4 +27,3 @@ function stickyHeaderFunction(breakpoint){
 elementHeight(header, "header-height");
 stickyHeaderFunction(320);
 
-
