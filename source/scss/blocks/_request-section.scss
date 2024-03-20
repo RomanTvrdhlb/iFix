@@ -1,12 +1,9 @@
-.offers-section{
+.request-section{
     padding-bottom: clamp(50px, 4.6154vw, 60px);
-    
+
     &__box{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        grid-gap: clamp(23px, 4.6154vw, 60px);
+        grid-gap: 30px;
     }
-
-
 }

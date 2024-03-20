@@ -13,6 +13,7 @@ export default {
   blogSlider: document.querySelector('.blog-slider'),
   rewiewsSlider: document.querySelector('.rewiews-slider'),
   brandsSlider: document.querySelector('.brands-slider'),
+  worksSlider: document.querySelector('.works-slider'),
   cookies: document.querySelector('.cookies-inner'),
   faqAcc: document.querySelector('.faq-acc'),
   faqAccParent: document.querySelector('.faq-section__box'),

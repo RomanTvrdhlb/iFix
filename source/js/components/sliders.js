@@ -1,8 +1,8 @@
 import Swiper from 'swiper';
 import vars from "../_vars";
-import {Autoplay, FreeMode} from 'swiper/modules';
+import {Autoplay, FreeMode, Grid} from 'swiper/modules';
 
-const {blogSlider, rewiewsSlider, brandsSlider} = vars;
+const {blogSlider, rewiewsSlider, brandsSlider, worksSlider} = vars;
 let containerWidth = document.documentElement.clientWidth;
 
 
@@ -45,6 +45,46 @@ if (brandsSlider) {
       },
       1024: {
         spaceBetween: 19,
+      },
+    },
+  });
+}
+
+if (worksSlider) {
+  const swiper = new Swiper(worksSlider.querySelector('.works-slider__container'), {
+    modules: [Grid],
+    slidesPerView: 'auto',
+    spaceBetween: 25,
+    observer: true,
+    observeParents: true,
+
+    grid: {
+      fill: 'row',
+      rows: 2,
+    },
+
+    on: {
+      init: function () {
+        const slides = Array.from(this.slides);
+        const halfSlidesLength = Math.ceil(slides.length / 2);
+        const firstRowSlides = slides.slice(0, halfSlidesLength);
+        const secondRowSlides = slides.slice(halfSlidesLength);
+
+        if (firstRowSlides.length > 0) {
+          const lastSlideFirstRow = firstRowSlides[firstRowSlides.length - 1];
+          lastSlideFirstRow.classList.add('last-row-slide');
+        }
+
+        if (secondRowSlides.length > 0) {
+          const lastSlideSecondRow = secondRowSlides[secondRowSlides.length - 1];
+          lastSlideSecondRow.classList.add('last-row-slide');
+        }
+
+        slides.forEach(function (slide, index) {
+          if (index >= slides.length / 2) {
+            slide.classList.add('second-row-slide');
+          }
+        });
       },
     },
   });

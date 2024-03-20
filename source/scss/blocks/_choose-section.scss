@@ -108,4 +108,13 @@
             }
         }
     }
+
+    &--mode{
+        padding-bottom: clamp(50px, 6.8462vw, 89px);
+
+        .choose-section__box{
+            padding: clamp(32px, 3.6923vw, 48px) clamp(24px, 6.1538vw, 80px) clamp(45px, 4.9231vw, 64px);
+            grid-gap: clamp(30px, 3.1538vw, 41px);
+        }
+    }
 }
