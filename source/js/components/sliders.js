@@ -63,6 +63,15 @@ if (worksSlider) {
       rows: 2,
     },
 
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 'auto',
+      },
+    },
+
     on: {
       init: function () {
         const slides = Array.from(this.slides);
@@ -89,6 +98,7 @@ if (worksSlider) {
     },
   });
 }
+
 if(rewiewsSlider){
 const rewiewsSliderContainer = rewiewsSlider.querySelector('.rewiews-slider__container');
 let swiper;

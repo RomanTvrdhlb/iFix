@@ -24,25 +24,49 @@
             align-items: center;
             position: relative;
             padding-bottom: clamp(50px, 8.3077vw, 108px);
-    
+            overflow: hidden;
             @include mobile{
                 align-items: flex-start;
                 flex-direction: column;
-                padding-bottom: 289px;
             }
         }
     
         &__image{
             z-index: -1;
             position: absolute;
-            width: Min(29.2308vw, 380px);
-            height: Min(32.6154vw, 424px);
-            right: 14%;
             bottom: 0;
+
+            @include for-small-tablet{
+                right: 14%;
+            }
+
+            @include small-tablet{
+                bottom: -1%;
+                @include for-mobile{
+                    right: 5%;
+                }
+            }
+
+            @include for-mobile{
+                width:  clamp(204px, 29.2308vw, 380px);
+                height: clamp(228px, 32.6154vw, 424px);
+            }
+
+            @include mobile{
+                width:  clamp(174px, 35.417vw, 204px);
+                height: clamp(194px, 39.583vw, 228px);
+                right: 0;
+            }
+
+            @include ios{
+                width: Min(34.783vw ,144px);
+                height: Min(39.614vw ,164px);
+             
+            }
         }
     
         .main-top{
-            max-width: Min(43vw, 559px);
+            max-width: clamp(220px, 43vw, 559px);
             grid-gap: clamp(20px, 3.5385vw, 46px);
 
     

@@ -1,6 +1,4 @@
 .work-card{
-    width: 171px;
-    height: 231px;
     position: relative;
     padding: 21px 20px 20px;
     transition: all .4s;
@@ -10,16 +8,28 @@
     transition: all .4s;
     border-radius: 8px;
 
-    &:hover{
-       z-index: 5;
-       height: calc(200% + 25px);
-        width: calc(200% + 25px);
+    @include for-small-tablet{
+        width: 171px;
+        height: 231px;
+    }
 
-        .work-card{
-            &__box{
-                opacity: 1;
-                visibility: visible;
-            }
+    @include small-tablet{
+        min-height: clamp(380px, 71.615vw, 550px);
+        width: 100%;
+    }
+
+    &:hover{
+        @include for-small-tablet{
+            z-index: 5;
+            height: calc(200% + 25px);
+             width: calc(200% + 25px);
+     
+             .work-card{
+                 &__box{
+                     opacity: 1;
+                     visibility: visible;
+                 }
+             }
         }
     }
 
@@ -42,12 +52,15 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        opacity: 0;
-        visibility: hidden;
         transition: all .4s;
         position: absolute;
         inset: 0;
         z-index: 3;
+
+        @include for-small-tablet{
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 
     &__top{
