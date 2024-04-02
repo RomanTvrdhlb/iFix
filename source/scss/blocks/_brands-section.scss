@@ -8,4 +8,14 @@
         align-items: center;
         grid-gap: clamp(7px, 4.6154vw, 60px);
     }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: clamp(16px, 1.5385vw, 20px);
+    }
+
+    &--mode{
+        padding-bottom: clamp(50px, 4.6154vw, 60px);
+    }
 }
