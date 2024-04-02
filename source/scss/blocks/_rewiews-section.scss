@@ -10,6 +10,12 @@
         position: relative;
     }
 
+    &__content{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(26px, 2.7692vw, 36px);
+    }
+
     .rewiews-top{
         @include for-small-tablet{
             position: absolute;
@@ -26,6 +32,20 @@
 
         @include for-small-tablet{
             display: none;
+        }
+    }
+
+    &--mode{
+        
+
+        .rewiews-section{
+            &__title{
+                display: flex;
+            }
+
+            &__box{
+                grid-gap: clamp(60px, 9.1538vw, 119px);
+            }
         }
     }
 }

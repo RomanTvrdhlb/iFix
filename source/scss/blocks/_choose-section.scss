@@ -113,8 +113,15 @@
         padding-bottom: clamp(50px, 6.8462vw, 89px);
 
         .choose-section__box{
-            padding: clamp(32px, 3.6923vw, 48px) clamp(24px, 6.1538vw, 80px) clamp(45px, 4.9231vw, 64px);
             grid-gap: clamp(30px, 3.1538vw, 41px);
+
+            @include for-laptop{
+                padding: clamp(32px, 3.6923vw, 48px) clamp(24px, 6.1538vw, 80px) clamp(45px, 4.9231vw, 64px);
+            }
+
+            @include laptop{
+                padding: clamp(32px, 3.6923vw, 48px) clamp(24px, 3.0769vw, 40px) clamp(45px, 4.9231vw, 64px);
+            }
         }
     }
 }

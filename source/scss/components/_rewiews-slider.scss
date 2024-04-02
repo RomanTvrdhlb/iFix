@@ -22,3 +22,19 @@
        }
     }
 }
+
+.info-slider{
+    overflow: hidden;
+    .swiper-wrapper{
+        display: flex;
+        grid-gap: initial;
+    
+    }
+
+    .rewiew-card{
+
+        @include for-small-tablet{
+        max-width: 100%;
+        }
+    }
+}
