@@ -21,6 +21,7 @@ export default {
   forms: document.querySelectorAll('.main-form'),
   social: document.querySelector('.footer__social'),
   socialParent: document.querySelector('.footer__wrapp'),
+  asideMenu: document.querySelector('.aside-menu'),
   socialParentMob: document.querySelector('.footer__box').firstElementChild,
   modals: [...document.querySelectorAll('[data-popup]')],
   modalsButton: [...document.querySelectorAll("[data-btn-modal]")],

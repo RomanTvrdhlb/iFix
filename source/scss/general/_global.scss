@@ -186,6 +186,18 @@ input[type="number"] {
   transition: max-height 0.2s;
 }
 
+.main-inner{
+  padding:clamp(50px, 4.6154vw, 60px) 0;
+  &__box{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 309px 1fr;
+  
+    @include tablet{
+      grid-template-columns: 1fr;
+    }
+  }
+}
 
 .dis-scroll {
   position: fixed;
@@ -287,6 +299,8 @@ fieldset {
     pointer-events: none;
   }
 }
+
+
 
 .cookies-inner{
   z-index: 20;

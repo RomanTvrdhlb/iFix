@@ -3,7 +3,7 @@ import { enableScroll } from '../functions/enable-scroll';
 import vars from '../_vars';
 
 import {toggleCustomClass, removeCustomClass, addCustomClass, removeClassInArray} from '../functions/customFunctions';
-const {overlay, burger, mobileMenu, cookies} = vars;
+const {overlay, burger, mobileMenu, cookies, asideMenu} = vars;
 
 const mobileMenuHandler = function(mobileMenu, burger) {
     burger.addEventListener('click', function(e){
@@ -28,6 +28,35 @@ if (mobileMenu) {
   });
 }
 
+if(asideMenu){
+  const btn = asideMenu.querySelector('.aside-menu__btn');
+  const wrapp = asideMenu.querySelector('.aside-menu__list');
+
+  function asideHandler(asideMenu, btn,wrapp){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      toggleCustomClass(asideMenu, 'active');
+      toggleCustomClass(btn, 'active');
+      toggleCustomClass(wrapp, 'active');
+  
+      btn.classList.contains('active') ? document.addEventListener('click', outsideClickHandler) : '';
+    })
+  }
+  
+  function closeAsideHandler(asideMenu,btn, wrapp){
+    removeCustomClass(asideMenu, 'active')
+    removeCustomClass(btn, 'active');
+    removeCustomClass(wrapp, 'active');
+  }
+  
+  function outsideClickHandler(e) {
+    if (!asideMenu.contains(e.target)) {
+      closeAsideHandler(btn, wrapp);
+    }
+  }
+
+  asideHandler(asideMenu, btn, wrapp);
+}
 
 if(cookies){
   setTimeout(function(){

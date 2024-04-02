@@ -6,21 +6,26 @@
     flex-direction: column;
     grid-gap: 20px;
     height: 100%;
+    background: rgba(var(--bg-g),1.0);
 
     .subtitle{
         color: rgba(var(--cl-b),1.0);
     }
 
+  
     &__box{
         display: flex;
         flex-direction: column;
         grid-gap: 15px;
-   
     }
 
     &__image{
         flex-grow: 1;
         display: flex;
         align-items: center;
+        mix-blend-mode: darken;
+        img,picture{
+            mix-blend-mode: darken;
+        }
     }
 }
