@@ -5,6 +5,15 @@ import vars from '../_vars';
 import {toggleCustomClass, removeCustomClass, addCustomClass, removeClassInArray} from '../functions/customFunctions';
 const {overlay, burger, mobileMenu, cookies, asideMenu} = vars;
 
+const menuLinks = mobileMenu.querySelectorAll('.main-nav__link');
+
+menuLinks.forEach(function(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    hideMenuHandler(mobileMenu, burger);
+  })
+})
+
 const mobileMenuHandler = function(mobileMenu, burger) {
     burger.addEventListener('click', function(e){
       e.preventDefault();

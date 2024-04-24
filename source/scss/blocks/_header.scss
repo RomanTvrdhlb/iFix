@@ -20,14 +20,18 @@ header{
   position: relative;
   z-index: 30;
   display: grid;
-  grid-template-columns: repeat(2, auto) 1fr auto;
+  grid-template-columns: repeat(2, auto)  1fr;
   align-items: center;
   grid-gap: clamp(14px, 1.5385vw, 20px);
   transition: box-shadow .4s;
 
   .logo{
-    margin-left: clamp(35px, 3.8462vw, 50px);
-
+   @include for-tablet{
+    position: absolute;
+    top: 20%;
+    left: 47.5%;
+  
+   }
     @include tablet{
       margin: 0;
     }
@@ -37,6 +41,10 @@ header{
    display: flex;
    align-items: center;
    grid-gap: clamp(12px, 1.5385vw, 20px);
+
+    @include for-tablet{
+      justify-self: end;
+    }
 
    @include tablet{
     justify-self: end;
