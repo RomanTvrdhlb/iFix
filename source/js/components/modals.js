@@ -4,17 +4,40 @@ import { enableScroll } from "../functions/enable-scroll";
 import {
   removeClassInArray,
   addCustomClass,
-  removeCustomClass,
-  toggleCustomClass,
+  removeCustomClass
 } from "../functions/customFunctions";
-import { data } from "autoprefixer";
 
-export function modalClickHandler(attribute, activeClass) {
+const fadeIn = (el, timeout, display) => {
+	el.style.opacity = 0;
+	el.style.display = display || 'block';
+	el.style.transition = `all ${timeout}ms`;
+	setTimeout(() => {
+		el.style.opacity = 1;
+	}, 10);
+};
+
+const fadeOut = (el, timeout) => {
+	el.style.opacity = 1;
+	el.style.transition = `all ${timeout}ms ease`;
+	el.style.opacity = 0;
+
+	setTimeout(() => {
+		el.style.display = 'none';
+	}, timeout);
+};
+
+export function modalClickHandler(
+  attribute,
+  activeClass,
+  overlayClass = activeClass
+) {
   const curentModal = overlay.querySelector(`[data-popup="${attribute}"]`);
   removeClassInArray(modals, activeClass);
-  addCustomClass(overlay, activeMode);
+  addCustomClass(overlay, overlayClass);
   addCustomClass(curentModal, activeClass);
+  fadeIn(curentModal, 200);
   disableScroll();
+
   innerButton = overlay.querySelector(
     `${"[data-popup]"}.${activeClass} .close`
   );
@@ -23,35 +46,54 @@ export function modalClickHandler(attribute, activeClass) {
 const {
   overlay,
   activeClass,
-  modalsButton,
+  mobileMenu,
   modals,
+  modalsButton,
   activeMode,
+  innerButtonModal,
+  burger,
 } = vars;
 let innerButton;
-
-const closeBtns = overlay.querySelectorAll('.close');
-
 const commonFunction = function () {
   removeCustomClass(overlay, activeMode);
   removeCustomClass(overlay, activeClass);
   removeClassInArray(modals, activeClass);
+
+  modals.forEach((modal) => fadeOut(modal, 300));
   enableScroll();
 };
 
-closeBtns.forEach(function(closeBtn){
-  closeBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    commonFunction();
-  })
-})
+function findAttribute(element, attributeName) {
+  let target = element;
+  while (target && target !== document) {
+    if (target.hasAttribute(attributeName)) {
+      return target.getAttribute(attributeName);
+    }
+    target = target.parentNode;
+  }
+  return null;
+}
 
 function buttonClickHandler(e, buttonAttribute, activeClass) {
   e.preventDefault();
-  const currentModalId = e.target.getAttribute(`${buttonAttribute}`);
-  const curentModal = overlay.querySelector(`[data-popup="${currentModalId}"]`);
+  const currentModalId = findAttribute(e.target, buttonAttribute);
+  if (!currentModalId) {
+    return;
+  }
+
+  const currentModal = overlay.querySelector(
+    `[data-popup="${currentModalId}"]`
+  );
+
+  mobileMenu && removeCustomClass(mobileMenu, activeClass);
+  burger && removeCustomClass(burger, activeClass);
+
   removeClassInArray(modals, activeClass);
   addCustomClass(overlay, activeClass);
-  addCustomClass(curentModal, activeClass);
+  addCustomClass(overlay, activeMode);
+  addCustomClass(currentModal, activeClass);
+  fadeIn(currentModal, 200, "block");
+
   disableScroll();
   innerButton = overlay.querySelector(
     `${"[data-popup]"}.${activeClass} .close`
@@ -64,10 +106,9 @@ function overlayClickHandler(e, activeClass) {
 
 function modalInit(buttonsArray, buttonAttribute, activeClass) {
   buttonsArray.map(function (btn) {
-    
-    btn.addEventListener('click', (e) => {
-        buttonClickHandler(e, buttonAttribute, activeClass)
-    })
+    btn.addEventListener("click", (e) => {
+      buttonClickHandler(e, buttonAttribute, activeClass);
+    });
   });
 }
 
@@ -75,5 +116,32 @@ overlay &&
   overlay.addEventListener("click", function (e) {
     overlayClickHandler(e, activeClass);
   });
+
 modalInit(modalsButton, "data-btn-modal", activeClass);
 
+innerButtonModal &&
+  innerButtonModal.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      enableScroll();
+      e.preventDefault();
+
+      const prevId = findAttribute(this.closest("[data-popup]"), "data-popup");
+      if (!prevId) {
+        return;
+      }
+
+      const currentModalId = this.getAttribute("data-btn-inner");
+      const currentModal = overlay.querySelector(
+        `[data-popup="${currentModalId}"]`
+      );
+      removeClassInArray(modals, activeClass);
+      addCustomClass(overlay, activeClass);
+      fadeOut(document.querySelector(`[data-popup="${prevId}"]`), 0);
+      fadeIn(currentModal, 200);
+      addCustomClass(currentModal, activeClass);
+      disableScroll();
+      innerButton = overlay.querySelector(
+        `${"[data-popup]"}.${activeClass} .close`
+      );
+    });
+  });
